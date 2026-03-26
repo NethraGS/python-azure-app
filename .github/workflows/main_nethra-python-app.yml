@@ -71,5 +71,3 @@ jobs:
         with:
           app-name: 'nethra-python-app'
           package: .
-
-          
