@@ -63,9 +63,10 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_49D2BDA2FABB4FD49EE7D4C7D05C3EEE }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_13DC78BE09EE43099CA578AB2B848BFB }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_729816A3F4A141438D1A39BD08B0244B }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -73,4 +74,6 @@ jobs:
         with:
           app-name: 'nethra-python-app'
           slot-name: 'Production'
+          package: .
+
           
